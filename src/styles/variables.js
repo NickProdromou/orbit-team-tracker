@@ -10,3 +10,23 @@ export const breakpoints = {
   large: '1440px',
   extraLarge: '2560px',
 }
+
+export const fontFamilyDefault = 'Helvetica, Arial, sans-serif'; 
+
+export const fontSizes = {
+  tiny: '0.500em',
+  detail: '0.625em',
+  ui: '1em',  
+  heading3: '1.125em'
+  heading2: '2.25em'
+  heading1: '3em'
+}
+
+export const lineHeight = {
+  tiny: '0.8em',
+  detail: '1em',
+  ui: '1.375em',
+  heading3: '1.25em'
+  heading2: '1.25'
+  heading1: '1.05em'
+}
