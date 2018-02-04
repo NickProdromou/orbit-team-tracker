@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { toggleMenu } from '../actions/uiActions.js'
 import PropTypes from 'prop-types';
 import AppHeader from '../components/AppHeader.js'
+import MobileOffCanvas from '../components/MobileOffCanvas.js'
 import Styled from 'styled-components';
 import colours from '../styles/colours.js';
 import { spacing } from '../styles/variables.js';
@@ -20,6 +21,10 @@ class PageContainer extends Component {
 
         return (
             <Page>
+                <MobileOffCanvas
+                    toggle={ toggleMenu }
+                    visible={ menuOpen }
+                ></MobileOffCanvas>
                 <AppHeader 
                     routerProps={ routerProps }
                     menuOpen={ menuOpen }
