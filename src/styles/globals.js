@@ -9,11 +9,13 @@ ${normalize}
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   font-size: 16px;
   font-family: Helvetica, Arial, sans-serif;
+  background: #434a67;
 }
-
-
 `

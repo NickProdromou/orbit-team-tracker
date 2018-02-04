@@ -15,7 +15,7 @@ export const fontFamilyDefault = 'Helvetica, Arial, sans-serif';
 
 export const fontSizes = {
   tiny: '0.500em',
-  detail: '0.625em',
+  detail: '0.750em',
   ui: '1em',  
   heading3: '1.125em',
   heading2: '2.25em',
