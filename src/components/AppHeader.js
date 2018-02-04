@@ -4,9 +4,12 @@ import Styled from 'styled-components';
 import colours from '../styles/colours.js';
 import { spacing } from '../styles/variables.js';
 import { Page } from 'hedron';
+import AppLinks from './AppLinks.js'
 import HamburgerTrigger from './HamburgerTrigger.js';
 
+
 import type from '../styles/mixins/type.js';
+import mediaQuery from '../styles/mixins/MediaQueryGenerator.js';
 
 export default class AppHeader extends Component {    
 
@@ -20,10 +23,15 @@ export default class AppHeader extends Component {
     return (      
       <Header>
         <Page className="HeaderInner">
-            <div>
+            <div className="HeaderInfo">
               <h1 className="HeadingTitle">Orbit</h1>
-              <h2 className="HeadingSub">A team tracker for small teams</h2>
+
             </div>
+            <nav className="HeaderNav">
+              <ul className="HeaderNavList">
+                <AppLinks/>
+              </ul>
+            </nav>
             <HamburgerTrigger 
               className="HeadingMenuTrigger"
               open={ menuOpen }
@@ -37,13 +45,19 @@ export default class AppHeader extends Component {
 
 const Header = Styled.header`  
   background: ${colours.primary};
-  padding: ${spacing.small[2]} ${spacing.mid[0]};
+  padding: 0 ${spacing.mid[0]};
 
   .HeaderInner {
     display: flex;
+    padding-top: ${spacing.small[1]};
     flex-direction: row;
     align-items: flex-start;
+    justify-content: space-between;
   }  
+
+  .HeaderInfo {
+    
+  }
   
   .HeadingTitle {
     ${type('heading2')}
@@ -59,7 +73,44 @@ const Header = Styled.header`
     font-weight: lighter;
   }
 
+  .HeaderNav {
+    display: none;
+    ${mediaQuery('medium',`
+      display: block;
+      align-self: flex-end;      
+    `)}
+  }
+
+  .HeaderNavList {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;    
+    margin-left: auto;
+  }
+
+  .AppLink {
+    margin-right: ${spacing.small[5]};
+    padding: ${spacing.small[5]} 0;
+    text-decoration: none;
+    color: ${colours.secondary};
+    border-bottom: 1px solid transparent;
+
+    :hover {
+      cursor: pointer;      
+    }
+
+    &.active {
+      border-bottom: 1px solid ${colours.tertiary};
+      color: ${colours.textLight};
+    }
+  }
+
   .HeadingMenuTrigger {
-    margin-left: auto;    
+      display: block;
+      margin-left: auto;    
+      ${mediaQuery('medium',`
+        display: none;
+    `)}
   }
 `

@@ -21,10 +21,7 @@ class PageContainer extends Component {
 
         return (
             <Page>
-                <MobileOffCanvas
-                    toggle={ toggleMenu }
-                    visible={ menuOpen }
-                ></MobileOffCanvas>
+                <MobileOffCanvas toggle={ toggleMenu } visible={ menuOpen }></MobileOffCanvas>
                 <AppHeader 
                     routerProps={ routerProps }
                     menuOpen={ menuOpen }
