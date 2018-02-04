@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import PageContainer from './PageContainer.js'
 
 export default class Employees extends Component {
   render() {
     return (
-      <div>Employees</div>
+      <PageContainer>        
+        <div>Employees</div>
+      </PageContainer>
     )
   }
 }
