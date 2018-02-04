@@ -7,15 +7,8 @@ import TeamCard from '../components/TeamCard.js';
 import { Page, Row, Column } from 'hedron';
 import Styled from 'styled-components';
 import colours from '../styles/colours.js';
-import { fetchInitialTeams } from '../actions/teamActions.js';
-import { fetchInitialEmployees } from '../actions/employeeActions.js';
 
-class Teams extends Component {
-
-  componentWillMount() {
-    this.props.getEmployees();
-    this.props.getTeams();
-  }
+class Teams extends Component {  
   
   static propTypes = {
 
@@ -69,11 +62,4 @@ const mapStateToProps = (state) => {
   }
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getEmployees: () => dispatch(fetchInitialEmployees()),
-    getTeams: () => dispatch(fetchInitialTeams()),    
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Teams)
+export default connect(mapStateToProps)(Teams)
