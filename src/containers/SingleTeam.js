@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import PageContainer from './PageContainer.js'
 
 export default class SingleTeam extends Component {
   render() {
     return (
-      <div>singleTeam</div>
+      <PageContainer>        
+        <div>singleTeam</div>
+      </PageContainer>
     )
   }
 }

@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import PageContainer from './PageContainer';
 
 export default class ErrorPage extends Component {
   render() {
     return (
-      <div>ErrorPage</div>
+      <PageContainer>
+        <div>ErrorPage</div>
+      </PageContainer>
     )
   }
 }
