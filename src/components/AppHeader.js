@@ -90,7 +90,7 @@ const Header = Styled.header`
     margin-right: ${spacing.small[5]};
     padding: ${spacing.small[5]} 0;
     text-decoration: none;
-    color: ${colours.secondary};
+    color: ${colours.textLight};
     border-bottom: 1px solid transparent;
 
     :hover {
@@ -98,8 +98,8 @@ const Header = Styled.header`
     }
 
     &.active {
+      color: ${colours.textDark};
       border-bottom: 1px solid ${colours.tertiary};
-      color: ${colours.textLight};
     }
   }
 
