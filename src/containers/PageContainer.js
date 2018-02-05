@@ -27,10 +27,7 @@ class PageContainer extends Component {
                     menuOpen={ menuOpen }
                     toggleMenuOpen={ toggleMenu }
                 />
-                { children }
-                <div className="FOOTER">
-                  this will be a footer eventually
-                </div>
+                { children }                            
             </Page>
 
         )

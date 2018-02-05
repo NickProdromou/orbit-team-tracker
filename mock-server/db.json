@@ -23,7 +23,7 @@
       "team": 5, 
       "role": "Database Engineer",
       "assignedProject": 2,
-      "workingFromHome": false,
+      "workingFromHome": true,
       "sick": false,
       "status": {
         "update": "migration is scheduled for 1:00am AEST"
@@ -37,7 +37,7 @@
       "role": "Senior Front End Engineer",
       "assignedProject": 4,
       "workingFromHome": false,
-      "sick": false,
+      "sick": true,
       "status": {
         "update": "We're tracking well, though we are blocked by the dev db migration",
         "blockers": [
@@ -97,7 +97,7 @@
       "team": 3,
       "role": "React Native Engineer",
       "assignedProject": 4,
-      "workingFromHome": false,
+      "workingFromHome": true,
       "sick": false,
       "status": {
         "update": "Still working with the design team lead trying to finalise the style-guide for dashboard widgets",

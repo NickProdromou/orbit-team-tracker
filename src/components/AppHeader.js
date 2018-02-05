@@ -46,6 +46,7 @@ export default class AppHeader extends Component {
 const Header = Styled.header`  
   background: ${colours.primary};
   padding: 0 ${spacing.mid[0]};
+  border-bottom: 1px solid ${colours.borderColour};
 
   .HeaderInner {
     display: flex;
@@ -55,10 +56,6 @@ const Header = Styled.header`
     justify-content: space-between;
   }  
 
-  .HeaderInfo {
-    
-  }
-  
   .HeadingTitle {
     ${type('heading2')}
     color: ${colours.textLight};
