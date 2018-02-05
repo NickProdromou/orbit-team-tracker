@@ -5,11 +5,10 @@ import {
 
 export default function projects(state = [], action) {
   switch(action.type) {
-    case FETCH_PROJECTS_SUCCESS:    
+    case FETCH_PROJECTS_SUCCESS:        
     return [...action.payload, ...state];    
     
-    case FETCH_PROJECTS_FAILED:
-    console.log(action.payload);
+    case FETCH_PROJECTS_FAILED:    
     return state;    
 
     default:

@@ -89,7 +89,7 @@ const MobileMenu = Styled.div`
 
 
       &.active {
-        color: ${colours.secondary};  
+        color: ${colours.textDark};  
         border-bottom-color: ${colours.tertiary};
       }
   }

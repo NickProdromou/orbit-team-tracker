@@ -8,11 +8,7 @@ import { Page, Row, Column } from 'hedron';
 import Styled from 'styled-components';
 import colours from '../styles/colours.js';
 
-class Teams extends Component {  
-  
-  static propTypes = {
-
-  }
+class Teams extends Component {    
 
   render() {    
 
@@ -20,9 +16,9 @@ class Teams extends Component {
 
     return (
       <PageContainer>        
-        <Page fluid={'true'}>
-            <Row fluid={'true'}>
-              <Column fluid={'true'}>
+        <Page fluid>
+            <Row fluid>
+              <Column fluid>
                 <PageHeader 
                   title={ 'Teams' }
                   subtitle={ 

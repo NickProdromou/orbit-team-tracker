@@ -2,7 +2,7 @@
 	"employees": [
 		{
       "id": 1,
-      "name": "Alexa Amazon",
+      "name": "Crystal Warren",
       "profileUrl": "https://randomuser.me/api/portraits/women/33.jpg",
       "team": 1, 
       "role": "Front End Engineer",
@@ -18,7 +18,7 @@
     },
     {
       "id": 2,
-      "name": "Google Hahm",
+      "name": "Wade Pierce",
       "profileUrl": "https://randomuser.me/api/portraits/men/89.jpg",
       "team": 5, 
       "role": "Database Engineer",
@@ -31,7 +31,7 @@
     },    
     {
       "id": 3,
-      "name": "Faas Beek",
+      "name": "Armando Roberts",
       "profileUrl": "https://randomuser.me/api/portraits/men/58.jpg",
       "team": 1, 
       "role": "Senior Front End Engineer",
@@ -65,7 +65,7 @@
     {
       "id": 5,
       "name": "Rosie glen",
-      "profileUrl": "https://randomuser.me/api/portraits/women/84.jpg",
+      "profileUrl": "https://randomuser.me/api/portraits/women/30.jpg",
       "team": 1, 
       "role": "Ui Engineer",
       "assignedProject": 3,
@@ -109,7 +109,7 @@
     {
       "id": 8,
       "name": "Eugene Levy",
-      "profileUrl": "https://randomuser.me/api/portraits/women/84.jpg",
+      "profileUrl": "https://randomuser.me/api/portraits/men/61.jpg",
       "team": 4, 
       "role": "Designer Team Lead",
       "assignedProject": 4,
@@ -119,7 +119,7 @@
     },
     {
       "id": 9,
-      "name": "Hank Humphries",
+      "name": "Elmer Wagner",
       "profileUrl": "https://randomuser.me/api/portraits/men/2.jpg",
       "team": 5, 
       "role": "Database Engineer",
@@ -133,8 +133,8 @@
     },
     {
       "id": 10,
-      "name": "Miguel Sanchez",
-      "profileUrl": "https://randomuser.me/api/portraits/lego/6.jpg",
+      "name": "Elaine Hansen",
+      "profileUrl": "https://randomuser.me/api/portraits/women/35.jpg",
       "team": 6, 
       "role": "Quality Assurance Engineer",
       "assignedProject": 5,

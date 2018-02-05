@@ -1,3 +1,4 @@
+import colours from './colours.js'
 import normalize from './vendor/normalize';
 
 export default `
@@ -16,6 +17,6 @@ body {
   padding: 0;
   font-size: 16px;
   font-family: Helvetica, Arial, sans-serif;
-  background: #434a67;
+  background: ${colours.secondary};
 }
 `
