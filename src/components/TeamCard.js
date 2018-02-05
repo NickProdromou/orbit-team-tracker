@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Styled from 'styled-components';
 import PropTypes from 'prop-types';
+import MinimalTeamMember from './MinimalTeamMember.js'
 import colours from '../styles/colours.js';
 import { spacing } from '../styles/variables.js';
 import AppLinks from './AppLinks.js'
 import type from '../styles/mixins/type.js';
 import mediaQuery from '../styles/mixins/MediaQueryGenerator.js';
+import { Link } from 'react-router-dom';
 
 export default class TeamCard extends Component {
 
@@ -31,16 +33,27 @@ export default class TeamCard extends Component {
   }
 
   showTeamMembers = () => {
-    return this.props.employees.filter( e => e.team === this.props.id ).map(e => (<div><p>{e.name}</p></div>))
+    return this.props.employees
+    .filter( e => e.team === this.props.id )
+    .map(e => (
+      <MinimalTeamMember
+        id={ e.id }
+        imageUrl={ e.profileUrl }
+        name={ e.name }
+        role={ e.role }
+        wfh={ e.workingFromHome }
+        sick={ e.sick }
+        key={ e.id }
+      />
+      ))
   }
 
   render() {
-    console.log(this.props)
-    const { title, description, members } = this.props;
+    const { title, description, members, id } = this.props;
     return (
       <Team className="TeamCard">
         <div className="TeamCardDetail">
-          <span className="TeamCardTitle">{ title }</span>
+          <Link to={`team/${id}`} className="TeamCardTitle">{ title }</Link>
           <p className="TeamCardDescription">{ description }</p>
           <div className="TeamCardFooter">
             <span className="TeamCardMembers">Team members: { members.length }</span>            
@@ -49,7 +62,11 @@ export default class TeamCard extends Component {
               </button>              
           </div>
         </div>
-        { this.state.expanded && this.showTeamMembers()}
+        { this.state.expanded && 
+          (<div className="TeamCardMemberList">
+            { this.showTeamMembers() } 
+          </div>)
+        }
       </Team>
     )
   }
@@ -73,6 +90,7 @@ border: 2px solid ${colours.highlight};
   color: ${colours.textLight};
   border-bottom: 1px solid ${colours.tertiary};
   font-weight: lighter;
+  text-decoration: none;
 }
 
 .TeamCardDescription {
@@ -87,20 +105,25 @@ border: 2px solid ${colours.highlight};
 }
 
 .TeamCardMembers {
+  ${type('detail')}
   color: ${colours.textLight};
 }
 
 .TeamCardButton {
-  margin-left: auto;
-  padding: ${spacing.small[1]} ${spacing.small[3]};
   ${type('ui')}
   color: ${colours.textLight};
-  background: ${colours.secondary};
-  font-weight: lighter;
-  border-radius: 4px;
+  text-decoration: underline;
+  margin-left: auto;
+  padding: ${spacing.small[1]} ${spacing.small[3]};  
+  background: none;
+  border: 0;
 
   &:hover {
     cursor: pointer;
-  }
+  }  
+}
+
+.TeamCardMemberList {
+  padding: ${spacing.small[3]} ${spacing.small[2]};
 }
 `
