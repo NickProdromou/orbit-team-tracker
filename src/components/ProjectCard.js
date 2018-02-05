@@ -70,11 +70,10 @@ border: 2px solid ${colours.highlight};
 
 .ProjectViewButton {
     border: 1px solid #eee;
-    border-radius: 4px;
-    background: #eee;
-    color: ${colours.textDark};
+    border-radius: 4px;    
+    color: ${colours.textLight};
     text-decoration: none;
-    padding: ${spacing.small[1]};
+    padding: ${spacing.small[1]} ${spacing.small[2]};
 }
 
 .ProjectCardFooter {
