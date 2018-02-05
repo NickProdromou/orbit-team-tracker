@@ -30,3 +30,5 @@ export const lineHeight = {
   heading2: '1.25',
   heading1: '1.05em'
 }
+
+export const transparentBg = "rgba(0,0,0,.6)";

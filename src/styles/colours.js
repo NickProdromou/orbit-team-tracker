@@ -6,5 +6,6 @@ export default  {
   error: '#FF1C7C',
   textLight: '#FFF',
   textDark: '#434a67',
-  borderColour: '#EEE'
+  borderColour: '#EEE',
+  whiteBackground: '#FFF',
 }

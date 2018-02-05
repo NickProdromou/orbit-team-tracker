@@ -36,8 +36,8 @@
       "team": 1, 
       "role": "Senior Front End Engineer",
       "assignedProject": 4,
-      "workingFromHome": false,
-      "sick": true,
+      "workingFromHome": true,
+      "sick": false,
       "status": {
         "update": "We're tracking well, though we are blocked by the dev db migration",
         "blockers": [
