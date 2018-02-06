@@ -6,7 +6,7 @@ import type from '../styles/mixins/type.js';
 import mediaQuery from '../styles/mixins/MediaQueryGenerator.js';
 
 const UserStatus = ({ status }) => (
-  <Status status={status}>{ status }</Status>
+  <Status status={status} className="UserStatus">{ status }</Status>
 )
 
 const Status = Styled.span`
@@ -14,8 +14,8 @@ const Status = Styled.span`
   ${props => props && (props.status === 'working from home') && css`
     color: ${colours.tertiary};
   `}
-  ${props => props && (props.status === 'sick') && css`
-    color: ${colours.secondary};
+  ${props => props && (props.status === 'out sick') && css`
+    color: ${colours.error};
   `}
   ${props => props && (props.status === 'in office') && css`
     color: ${colours.highlight};

@@ -15,7 +15,7 @@ const MinimalTeamMember = ({id, imageUrl, name, role, status}) => (
         <span className="UserName">{ name }</span>
         <span className="UserRole">{ role }</span>      
         <div className="UserStatus">
-          <UserStatus status={status} />
+          <UserStatus status={ status }/>
         </div>
       </div>
     </div>    

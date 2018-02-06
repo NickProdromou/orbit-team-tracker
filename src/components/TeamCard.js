@@ -42,6 +42,7 @@ export default class TeamCard extends Component {
         name={ e.name }
         role={ e.role }        
         status={ e.status }
+        key={ e.id }
       />
       ))
   }

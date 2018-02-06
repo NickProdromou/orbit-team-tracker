@@ -27,12 +27,13 @@ export default class EmployeeCard extends Component {
       <Employee className="UserCard">
         <figure className="UserAvatar">
           <img src={ image } className="UserImage"/>
-          <UserStatus status={'working from home'}/>
+          <UserStatus status={ status }/>
         </figure>
         <div className="UserDetail">
           <h2 className="UserName">{ name }</h2>
           <h3 className="UserTitle">{ role }</h3>
           <h4 className="UserTeam">Team</h4>
+          <button className="UserButton">Working on</button>
         </div>
       </Employee>
     )
@@ -48,6 +49,8 @@ padding: ${spacing.small[5]};
 
 .UserAvatar {
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .UserDetail {
@@ -69,6 +72,22 @@ padding: ${spacing.small[5]};
 }
 
 .UserStatus {
-  ${type('detail')};
+  margin-top: ${spacing.small[4]}  
+}
+
+.UserButton {
+  margin-left: auto;
+  margin-left: auto;
+  padding: ${spacing.small[1]} ${spacing.small[3]};
+  ${type('ui')}
+  color: ${colours.textLight};
+  background: ${colours.secondary};
+  font-weight: lighter;
+  border-radius: 4px;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }   
 }
 `

@@ -62,11 +62,9 @@
       "team": 2, 
       "role": "Software Engineer",
       "assignedProject": 1,
-      "status": "in office",
-      "status": {
-        "update": "Creating the necessary endpoints for the Analytics data",
-        "blockers": []
-      }
+      "status": "in office",    
+      "update": "Creating the necessary endpoints for the Analytics data",
+      "blockers": []      
     },
     {
       "id": 7,
