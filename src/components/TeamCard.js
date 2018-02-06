@@ -40,10 +40,8 @@ export default class TeamCard extends Component {
         id={ e.id }
         imageUrl={ e.profileUrl }
         name={ e.name }
-        role={ e.role }
-        wfh={ e.workingFromHome }
-        sick={ e.sick }
-        key={ e.id }
+        role={ e.role }        
+        status={ e.status }
       />
       ))
   }

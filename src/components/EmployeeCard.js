@@ -5,16 +5,9 @@ import { spacing, transparentBg } from '../styles/variables.js';
 import type from '../styles/mixins/type.js';
 import mediaQuery from '../styles/mixins/MediaQueryGenerator.js';
 import { Link } from 'react-router-dom';
+import UserStatus from './UserStatus'; 
 
 export default class EmployeeCard extends Component {
-
-  getEmployeeMeta = (workingFromHome, sick) => (
-      <span className="EmployeeMeta">
-        { workingFromHome && (<span className="EmployeeWFH">Working from home</span>)}
-        { sick && (<span className="EmployeeSick">Out sick</span>)}        
-        { !sick && !workingFromHome && (<span className="EmployeeIn">In Office</span>) }
-      </span>
-    )
 
   render() {
 
@@ -26,32 +19,20 @@ export default class EmployeeCard extends Component {
      workingFromHome,
      sick,
      status,
-     teams
-    } = this.props;
-
-    console.log(this.props);    
+     teams,
+     teamId
+    } = this.props;    
 
     return (
-      <Employee className="EmployeeCard">
-        <div className="EmployeeHeader">
-          <div className="EmployeeImage">
-            <img src={image} alt="" className="EmployeeProfile"/>            
-          </div>
-          <div className="EmployeeDetail">
-            <span className="EmployeeName">{ name } { this.getEmployeeMeta(workingFromHome, sick) }</span> 
-            <span className="EmployeeRole">{ role }</span>            
-            <span className="EmployeeTeam">{ teams.find(team => team.id === team ) }</span>
-          </div>
-        </div>        
-        <div className="EmployeeStatus">
-          <div className="EmployeeUpdate">{ status.update }</div>
-          {status.blockers 
-            ? (<div className="EmployeeBlocker"> no blockers reported </div> )
-            : (<div className="EmployeeBlocker"> {status.blockers && status.blockers.map(b => b)} </div> )
-          }
-        </div>
-        <div className="EmployeeFooter">
-          <button className="EmployeeProfileLink">View full profile</button>
+      <Employee className="UserCard">
+        <figure className="UserAvatar">
+          <img src={ image } className="UserImage"/>
+          <UserStatus status={'working from home'}/>
+        </figure>
+        <div className="UserDetail">
+          <h2 className="UserName">{ name }</h2>
+          <h3 className="UserTitle">{ role }</h3>
+          <h4 className="UserTeam">Team</h4>
         </div>
       </Employee>
     )
@@ -59,78 +40,35 @@ export default class EmployeeCard extends Component {
 }
 
 const Employee = Styled.div`
-margin: ${spacing.small[2]};
 background: ${colours.whiteBackground};
 border-radius: 4px;
 display: flex;
-flex-direction: column;
-border: 2px solid ${colours.highlight};
+justify-content: flex-start;
+padding: ${spacing.small[5]};
 
-.EmployeeHeader {
-  display: flex;
-  flex-direction: row;
+.UserAvatar {
+  margin: 0;
 }
 
-.EmployeeImage {}
-
-.EmployeeName {
-  display: flex;  
-  align-items: center;
+.UserDetail {
+  margin-left: ${spacing.small[5]}
 }
 
-.EmployeeDetail {
-  display: flex;
-  flex-direction: column;
-  margin-left: ${spacing.small[5]};
+.UserName {
+  ${type('heading3')}
+  margin: 0;
+}
+.UserTitle {
+  ${type('ui')}
+  font-weight: bold;
+  margin: 0;
 }
 
-.EmployeeMeta {  
-  display: flex;
-  margin-left: ${spacing.small[4]};
+.UserTeam {
+  margin-top: ${spacing.small[5]};    
 }
 
-.EmployeeStatus {
-  display: flex;
+.UserStatus {
+  ${type('detail')};
 }
-
-.EmployeeUpdate {
-  display: flex;
-  flex-direction: column;
-}
-
-.EmployeeBlocker {
-  display: flex;
-  flex-direction: column;
-}
-
-.EmployeeProfileLink {
-  border: 1px solid #eee;
-  border-radius: 4px;    
-  color: ${colours.textLight};
-  background: ${colours.primary};
-  text-decoration: none;
-  padding: ${spacing.small[1]} ${spacing.small[2]};
-}
-
-.EmployeeFooter {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.EmployeeWFH {
-  ${type('detail')}
-  color: ${colours.tertiary};
-}
-
-.EmployeeSick {
-  ${type('detail')}
-  color: ${colours.error};
-}
-
-.EmployeeIn {
-  ${type('detail')}
-  color: ${colours.highlight};
-}
-
-
 `

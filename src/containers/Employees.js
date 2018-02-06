@@ -25,6 +25,7 @@ class Employees extends Component {
                 name={ employee.name }
                 role={ employee.role }                      
                 id={ employee.id }
+                teamId={ employee.team }
                 image={ employee.profileUrl }
                 workingFromHome={ employee.workingFromHome }
                 sick={ employee.sick }   
