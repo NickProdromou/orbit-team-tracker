@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { arrayOf } from 'prop-types'
+import Employee from '../types/Employee.js'
+import Team from '../types/Team.js';
 import PageContainer from './PageContainer';
 import PageHeader from '../components/PageHeader.js'
 import TeamCard from '../components/TeamCard.js';
 import { Page, Row, Column } from 'hedron';
 
 class Teams extends Component {    
+
+  static propTypes = {
+    employees: arrayOf(Employee),
+    teams: arrayOf(Team),
+  }
 
   render() {    
 
@@ -14,7 +22,7 @@ class Teams extends Component {
     return (
       <PageContainer>        
         <Page fluid>
-            <Row fluid>
+            <Row>
               <Column fluid>
                 <PageHeader 
                   title={ 'Teams' }
@@ -27,8 +35,8 @@ class Teams extends Component {
           </Page>          
             <Page>
               <Row>
-                { teams.map( team => (
-                  <Column md={6} lg={6}>
+                { teams.map( (team, i) => (
+                  <Column key={i} md={6} lg={6}>
                     <TeamCard
                       title={ team.title }
                       description={ team.description }
