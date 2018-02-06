@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Styled from 'styled-components';
 import type from '../styles/mixins/type.js';
 import colours from '../styles/colours.js';
@@ -10,7 +9,7 @@ import { Link } from 'react-router-dom';
 const MinimalTeamMember = ({id, imageUrl, name, role, status}) => (
   <User>
     <div className="UserInner">
-      <img className="UserAvatar" src={ imageUrl }></img>
+      <img className="UserAvatar" src={ imageUrl } alt="User profile"></img>
       <div className="UserDetail">
         <span className="UserName">{ name }</span>
         <span className="UserRole">{ role }</span>      

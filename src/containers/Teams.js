@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import PageContainer from './PageContainer';
 import PageHeader from '../components/PageHeader.js'
 import TeamCard from '../components/TeamCard.js';
 import { Page, Row, Column } from 'hedron';
-import Styled from 'styled-components';
-import colours from '../styles/colours.js';
 
 class Teams extends Component {    
 
@@ -27,9 +24,11 @@ class Teams extends Component {
                 }/>
               </Column>            
             </Row>
-            <TeamList>
+          </Page>          
+            <Page>
+              <Row>
                 { teams.map( team => (
-                  <Column lg={4}>
+                  <Column lg={6}>
                     <TeamCard
                       title={ team.title }
                       description={ team.description }
@@ -40,16 +39,12 @@ class Teams extends Component {
                     />
                 </Column>
               )) }
-            </TeamList>
-        </Page>          
+            </Row>        
+            </Page>
       </PageContainer>      
     )
   }
 }
-
-const TeamList = Styled(Row)`
-  background: ${colours.secondary};
-`
 
 const mapStateToProps = (state) => {
   return {

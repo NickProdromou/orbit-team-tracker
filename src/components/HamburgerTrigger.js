@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Styled from 'styled-components';
 import colours from '../styles/colours.js';
-import { spacing } from '../styles/variables.js';
 
 export default class HamburgerTrigger extends Component { 
 
@@ -39,7 +38,7 @@ const AnimatedHamburger = Styled.div`
         height: 2px;
         width: 35px;
         top: 15px;
-        background: white;
+        background: ${colours.whiteBackground};
         position: relative;
         display: block;
         content: '';

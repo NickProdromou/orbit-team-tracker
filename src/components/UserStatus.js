@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Styled, { css } from 'styled-components';
 import colours from '../styles/colours.js';
-import { spacing, transparentBg } from '../styles/variables.js';
 import type from '../styles/mixins/type.js';
-import mediaQuery from '../styles/mixins/MediaQueryGenerator.js';
 
 const UserStatus = ({ status }) => (
   <Status status={status} className="UserStatus">{ status }</Status>
