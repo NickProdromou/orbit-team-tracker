@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import colours from '../styles/colours.js';
 import { spacing } from '../styles/variables.js';
 import type from '../styles/mixins/type.js';
-import mediaQuery from '../styles/mixins/MediaQueryGenerator.js';
 
 export default class ProjectCard extends Component {
   render() {

@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 import MinimalTeamMember from './MinimalTeamMember.js'
 import colours from '../styles/colours.js';
 import { spacing } from '../styles/variables.js';
-import AppLinks from './AppLinks.js'
 import type from '../styles/mixins/type.js';
-import mediaQuery from '../styles/mixins/MediaQueryGenerator.js';
 import { Link } from 'react-router-dom';
 
 export default class TeamCard extends Component {
@@ -40,9 +38,8 @@ export default class TeamCard extends Component {
         id={ e.id }
         imageUrl={ e.profileUrl }
         name={ e.name }
-        role={ e.role }
-        wfh={ e.workingFromHome }
-        sick={ e.sick }
+        role={ e.role }        
+        status={ e.status }
         key={ e.id }
       />
       ))

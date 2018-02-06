@@ -6,15 +6,10 @@
       "profileUrl": "https://randomuser.me/api/portraits/women/33.jpg",
       "team": 1, 
       "role": "Front End Engineer",
-      "assignedProject": 1,
-      "workingFromHome": false,
-      "sick": false,
-      "status": {
-        "update" : "work is proceeding on track",
-        "blockers": [
-          "we need design to finish up on the component"
-        ]
-      }
+      "assignedProjects": [1],
+      "status": "working from home",
+      "update" : "work is proceeding on track",
+      "blockers": [ "we need design to finish up on the component"]
     },
     {
       "id": 2,
@@ -22,12 +17,10 @@
       "profileUrl": "https://randomuser.me/api/portraits/men/89.jpg",
       "team": 5, 
       "role": "Database Engineer",
-      "assignedProject": 2,
-      "workingFromHome": true,
-      "sick": false,
-      "status": {
-        "update": "migration is scheduled for 1:00am AEST"
-      }
+      "assignedProjects": [2],
+      "status": "working from home",
+      "update": "migration is scheduled for 1:00am AEST",
+      "blockers": []
     },    
     {
       "id": 3,
@@ -35,16 +28,10 @@
       "profileUrl": "https://randomuser.me/api/portraits/men/58.jpg",
       "team": 1, 
       "role": "Senior Front End Engineer",
-      "assignedProject": 4,
-      "workingFromHome": false,
-      "sick": true,
-      "status": {
-        "update": "We're tracking well, though we are blocked by the dev db migration",
-        "blockers": [
-          "migration of the dev db",
-          "finalisaton on style-guide for profile sidebar widgets"
-        ]
-      }
+      "assignedProjects": [4],
+      "status": "working from home",
+      "update": "We're tracking well, though we are blocked by the dev db migration",
+      "blockers": [ "migration of the dev db", "finalisaton on style-guide for profile sidebar widgets"]
     },
     {
       "id": 4,
@@ -52,15 +39,10 @@
       "profileUrl": "https://randomuser.me/api/portraits/men/29.jpg",
       "team": 2, 
       "role": "Golang specialist",
-      "assignedProject": 4,
-      "workingFromHome": false,
-      "sick": false,
-      "status": {
-        "update": "Still working with the design team lead trying to finalise the style-guide for dashboard widgets",
-        "blockers": [
-          "Design team lead acceptance"
-        ]
-      }
+      "assignedProjects": [4],
+      "status": "in office",
+      "update": "Still working with the design team lead trying to finalise the style-guide for dashboard widgets",
+      "blockers": [ "Design team lead acceptance" ]
     },
     {
       "id": 5,
@@ -68,13 +50,10 @@
       "profileUrl": "https://randomuser.me/api/portraits/women/30.jpg",
       "team": 1, 
       "role": "Ui Engineer",
-      "assignedProject": 3,
-      "workingFromHome": false,
-      "sick": false,
-      "status": {
-        "update": "Working on the implemenation of a reusable video component",
-        "blockers": []
-      }
+      "assignedProjects": [3],
+      "status": "in office",
+      "update": "Working on the implemenation of a reusable video component",
+      "blockers": []
     },
     {
       "id": 6,
@@ -82,13 +61,10 @@
       "profileUrl": "https://randomuser.me/api/portraits/men/28.jpg",
       "team": 2, 
       "role": "Software Engineer",
-      "assignedProject": 1,
-      "workingFromHome": false,
-      "sick": false,
-      "status": {
-        "update": "Creating the necessary endpoints for the Analytics data",
-        "blockers": []
-      }
+      "assignedProjects": [1],
+      "status": "in office",    
+      "update": "Creating the necessary endpoints for the Analytics data",
+      "blockers": []      
     },
     {
       "id": 7,
@@ -96,15 +72,10 @@
       "profileUrl": "https://randomuser.me/api/portraits/women/84.jpg",
       "team": 3,
       "role": "React Native Engineer",
-      "assignedProject": 4,
-      "workingFromHome": true,
-      "sick": false,
-      "status": {
-        "update": "Still working with the design team lead trying to finalise the style-guide for dashboard widgets",
-        "blockers": [
-          "Design team lead acceptance"
-        ]
-      }
+      "assignedProjects": [4],
+      "status": "working from home",      
+      "update": "Still working with the design team lead trying to finalise the style-guide for dashboard widgets",
+      "blockers": ["Waiting on design team lead acceptance"]
     },
     {
       "id": 8,
@@ -112,10 +83,10 @@
       "profileUrl": "https://randomuser.me/api/portraits/men/61.jpg",
       "team": 4, 
       "role": "Designer Team Lead",
-      "assignedProject": 4,
-      "workingFromHome": false,
-      "sick": true,
-      "status": {}
+      "assignedProjects": [4],
+      "status": "out sick",
+      "update": "",
+      "blockers": []
     },
     {
       "id": 9,
@@ -123,13 +94,10 @@
       "profileUrl": "https://randomuser.me/api/portraits/men/2.jpg",
       "team": 5, 
       "role": "Database Engineer",
-      "assignedProject": 4,
-      "workingFromHome": false,
-      "sick": false,
-      "status": {
-        "update": "Completed the table joins get the data for projections",
-        "blockers": []
-      }
+      "assignedProjects": [4],
+      "status": "in office",
+      "update": "Completed the table joins get the data for projections",
+      "blockers": []
     },
     {
       "id": 10,
@@ -137,15 +105,10 @@
       "profileUrl": "https://randomuser.me/api/portraits/women/35.jpg",
       "team": 6, 
       "role": "Quality Assurance Engineer",
-      "assignedProject": 5,
-      "workingFromHome": false,
-      "sick": false,
-      "status": {
-        "update": "Writing out cucumber scripts based on spec",
-        "blockers": [
-          "Waiting for feature implemenation"
-        ]
-      }
+      "assignedProjects": [5],
+      "status": "in office",
+      "update": "Writing out cucumber scripts based on spec",
+      "blockers": [ "Waiting for feature implemenation" ]
     }
 	],
 	"projects": [

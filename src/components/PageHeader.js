@@ -4,7 +4,6 @@ import Styled from 'styled-components';
 import colours from '../styles/colours.js';
 import { spacing } from '../styles/variables.js';
 import type from '../styles/mixins/type.js';
-import mediaQuery from '../styles/mixins/MediaQueryGenerator.js';
 
 
 const PageHeader = ({title, subtitle}) => (
@@ -16,7 +15,7 @@ const PageHeader = ({title, subtitle}) => (
 
 PageHeader.propTypes = {
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired
+  subtitle: PropTypes.string,
 }
 
 const Header = Styled.div`  
