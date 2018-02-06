@@ -1,6 +1,7 @@
 import React from 'react';
 import Styled from 'styled-components';
 import type from '../styles/mixins/type.js';
+import mediaQuery from '../styles/mixins/MediaQueryGenerator.js';
 import colours from '../styles/colours.js';
 import { spacing } from '../styles/variables.js';
 import UserStatus from './UserStatus'; 
@@ -41,6 +42,13 @@ border: 1px solid ${colours.highlight};
 .UserAvatar {
   width: 60px;
   height: 60px;
+
+  ${mediaQuery('small',`
+    height: auto;
+    width: auto;
+    max-height: 128px;
+    max-width: 128px;
+  `)}
 }
 
 .UserDetail {

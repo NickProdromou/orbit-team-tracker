@@ -28,7 +28,7 @@ class Teams extends Component {
             <Page>
               <Row>
                 { teams.map( team => (
-                  <Column lg={6}>
+                  <Column md={6} lg={6}>
                     <TeamCard
                       title={ team.title }
                       description={ team.description }
