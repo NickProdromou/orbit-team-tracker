@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { arrayOf } from 'prop-types'
+import Employee from '../types/Employee.js'
+import Team from '../types/Team.js';
+import Project from '../types/Project.js';
 import { connect } from 'react-redux';
 import PageContainer from './PageContainer.js';
 import PageHeader from '../components/PageHeader.js';
@@ -7,6 +11,12 @@ import ProjectCard from '../components/ProjectCard.js';
 import { Page, Row, Column } from 'hedron';
 
 class Employees extends Component {
+
+  static propTypes = {
+    employees: arrayOf(Employee),
+    teams: arrayOf(Team),
+    projects: arrayOf(Project),
+  }
 
   renderProjects = ( assignedProjects, projects) => {
     const currentProjects = assignedProjects.map( project => {
