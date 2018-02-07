@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { bool, func } from 'prop-types';
 import Styled from 'styled-components';
 import { spacing, colours } from '../styles/variables.js';

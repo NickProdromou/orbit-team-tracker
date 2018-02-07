@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { func, array, string, object } from 'prop-types';
+import { func, string, object } from 'prop-types';
 import Styled from 'styled-components';
 import { spacing, colours } from '../styles/variables.js';
 import { type } from '../styles/mixins/index.js';
@@ -52,7 +52,6 @@ export default class ExpandableCard extends Component {
 }
 
 const StyledExpandableCard = Styled.div`
-  margin: ${spacing.small[2]};
   background: ${colours.primary};
   border-radius: 4px;
   padding: ${spacing.small[3]};

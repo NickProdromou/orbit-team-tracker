@@ -4,7 +4,6 @@ import Employee from '../types/Employee.js'
 import ExpandableCard from '../components/ExpandableCard';
 import MinimalTeamMember from '../components/MinimalTeamMember';
 import Styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { spacing, colours } from '../styles/variables.js';
 import { type } from '../styles/mixins/index.js';
 
@@ -39,7 +38,7 @@ class ProjectCard extends Component {
 }
 
   render() {
-    const { title, description, id, issue, storyPoints, assignedMembers } = this.props;
+    const { title, description, storyPoints } = this.props;
     return (
       <ExpandableCard
         renderFunc={this.showTeamMembers}
