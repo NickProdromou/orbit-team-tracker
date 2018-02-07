@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Styled from 'styled-components';
-import colours from '../styles/colours.js';
-import { spacing } from '../styles/variables.js';
+import { spacing, colours } from '../styles/variables.js';
 import { Page } from 'hedron';
 import AppLinks from './AppLinks.js'
 import HamburgerTrigger from './HamburgerTrigger.js';
-import type from '../styles/mixins/type.js';
-import mediaQuery from '../styles/mixins/MediaQueryGenerator.js';
+import { type, mediaQuery } from '../styles/mixins/index.js';
 
 export default class AppHeader extends Component {    
 
@@ -60,7 +58,7 @@ const Header = Styled.header`
   }
 
   .HeadingTitle {
-    ${type('heading2')}
+    ${type('heading1')}
     color: ${colours.textLight};
     margin-top: 0;
     margin-bottom: ${spacing.small[0]}

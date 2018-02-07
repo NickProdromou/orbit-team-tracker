@@ -1,6 +1,7 @@
 import { breakpoints } from '../variables.js';
+import { fontFamilyDefault, fontSizes, lineHeight } from '../variables.js';
 
-export default function mediaQuery(breakpoint , styleString) {
+const mediaQuery = (breakpoint , styleString) => {
 
     if (typeof styleString && typeof breakpoint !== 'string' ) {
         return;
@@ -31,3 +32,10 @@ export default function mediaQuery(breakpoint , styleString) {
             return `${styleString}`;
     }
 }
+
+
+const type = type => {
+  return  `font: ${fontSizes[type]}/${lineHeight[type]} ${fontFamilyDefault};`
+}  
+
+export { type, mediaQuery}

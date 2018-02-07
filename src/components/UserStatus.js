@@ -1,8 +1,8 @@
 import React from 'react';
 import { string } from 'prop-types';
 import Styled, { css } from 'styled-components';
-import colours from '../styles/colours.js';
-import type from '../styles/mixins/type.js';
+import { colours } from '../styles/variables.js';
+import { type } from '../styles/mixins/index.js';
 
 const UserStatus = ({ status }) => (
   <Status status={status} className="UserStatus">{ status }</Status>

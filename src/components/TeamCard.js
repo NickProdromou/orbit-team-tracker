@@ -6,9 +6,8 @@ import Styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ExpandableCard from '../components/ExpandableCard';
 import MinimalTeamMember from './MinimalTeamMember.js'
-import colours from '../styles/colours.js';
-import { spacing } from '../styles/variables.js';
-import type from '../styles/mixins/type.js';
+import { spacing, colours } from '../styles/variables.js';
+import { type } from '../styles/mixins/index.js';
 import { Link } from 'react-router-dom';
 
 export default class TeamCard extends Component {

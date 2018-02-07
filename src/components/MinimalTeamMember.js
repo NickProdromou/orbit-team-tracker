@@ -1,10 +1,8 @@
 import React from 'react';
 import { number, string } from 'prop-types';
 import Styled from 'styled-components';
-import type from '../styles/mixins/type.js';
-import mediaQuery from '../styles/mixins/MediaQueryGenerator.js';
-import colours from '../styles/colours.js';
-import { spacing } from '../styles/variables.js';
+import { type, mediaQuery } from '../styles/mixins/index.js';
+import { spacing, colours } from '../styles/variables.js';
 import UserStatus from './UserStatus'; 
 import { Link } from 'react-router-dom';
 

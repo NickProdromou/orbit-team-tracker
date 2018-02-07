@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Styled from 'styled-components';
-import colours from '../styles/colours.js';
+import { colours } from '../styles/variables.js';
 
 export default class HamburgerTrigger extends Component { 
 
