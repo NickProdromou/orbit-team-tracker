@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { number, string, arrayOf, func, array } from 'prop-types';
+import Team from '../types/Team.js';
 import Styled from 'styled-components';
 import colours from '../styles/colours.js';
 import { spacing } from '../styles/variables.js';
@@ -13,6 +15,19 @@ export default class EmployeeCard extends Component {
     this.state = {
       showChildren: false
     }
+  }
+
+  static propTypes = {
+    name: string,
+    profileUrl: string,
+    team: number,
+    role: string,
+    assignedProjects: arrayOf(number),
+    status: string,
+    update: string,
+    blockers: arrayOf(string),
+    children: array,
+    teams: arrayOf(Team),
   }
 
   toggleExpanded = (state) => {

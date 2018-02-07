@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { bool, func } from 'prop-types';
 import Styled from 'styled-components';
 import colours from '../styles/colours.js';
 import { spacing } from '../styles/variables.js';
@@ -7,17 +7,7 @@ import AppLinks from './AppLinks.js'
 import type from '../styles/mixins/type.js';
 import mediaQuery from '../styles/mixins/MediaQueryGenerator.js';
 
-export default class MobileOffCanvas extends Component {
-  static propTypes = {
-    visible: PropTypes.bool.isRequired,
-    toggle: PropTypes.func.isRequired,
-  }
-
-  render() {
-
-    const { visible } = this.props;
-
-    return (
+const MobileOffCanvas = ({ visible }) => (
       <MobileMenu visible={visible}>
         <div className="MobileMenuContainer">
           <nav className="MobileMenuNav">
@@ -28,9 +18,11 @@ export default class MobileOffCanvas extends Component {
         </div>
         <div className="MobileMenuOverlay"></div>
       </MobileMenu>
-      
     )
-  }
+
+MobileOffCanvas.propTypes = {
+  visible: bool.isRequired,
+  toggle: func.isRequired,
 }
 
 const MobileMenu = Styled.div`
@@ -95,4 +87,5 @@ const MobileMenu = Styled.div`
   }
 }
 `
-  
+
+export default MobileOffCanvas

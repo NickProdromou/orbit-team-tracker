@@ -6,8 +6,6 @@ import { spacing } from '../styles/variables.js';
 import { Page } from 'hedron';
 import AppLinks from './AppLinks.js'
 import HamburgerTrigger from './HamburgerTrigger.js';
-
-
 import type from '../styles/mixins/type.js';
 import mediaQuery from '../styles/mixins/MediaQueryGenerator.js';
 
@@ -24,8 +22,8 @@ export default class AppHeader extends Component {
       <Header>
         <Page className="HeaderInner">
             <div className="HeaderInfo">
-              <h1 className="HeadingTitle">Orbit</h1>
-
+              <h1 className="HeadingTitle">Orbit</h1>              
+              <span className="HeaderSubtitle">team tracker</span>
             </div>
             <nav className="HeaderNav">
               <ul className="HeaderNavList">
@@ -56,6 +54,11 @@ const Header = Styled.header`
     justify-content: space-between;
   }  
 
+  .HeaderInfo {
+    display: flex;
+    align-items: flex-end;
+  }
+
   .HeadingTitle {
     ${type('heading2')}
     color: ${colours.textLight};
@@ -63,11 +66,15 @@ const Header = Styled.header`
     margin-bottom: ${spacing.small[0]}
   }
 
-  .HeadingSub {
-    ${type('ui')}
+  .HeaderSubtitle {
+    ${type('detail')}
     color: ${colours.textLight};
     margin: 0;
     font-weight: lighter;
+    margin-bottom: ${spacing.small[3]};
+    margin-left: ${spacing.small[3]};
+    font-style: italic;
+    font-weight: bold;
   }
 
   .HeaderNav {

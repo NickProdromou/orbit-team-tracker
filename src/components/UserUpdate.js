@@ -1,4 +1,5 @@
 import React from 'react';
+import { string, arrayOf } from 'prop-types';
 import Styled from 'styled-components';
 import colours from '../styles/colours.js';
 import { spacing } from '../styles/variables.js';
@@ -22,8 +23,12 @@ const UserUpdate = ({ update, blockers }) => (
     </div>
   </Update>
 )
-  
 
+UserUpdate.propTypes = {
+  update: string.isRequired,
+  blockers: arrayOf(string), 
+}
+  
 const Update = Styled.div`
   display: flex;
   justify-content: space-between;

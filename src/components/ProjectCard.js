@@ -1,33 +1,36 @@
 import React, { Component } from 'react';
+import { number, string } from 'prop-types'
 import Styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import colours from '../styles/colours.js';
 import { spacing } from '../styles/variables.js';
 import type from '../styles/mixins/type.js';
 
-export default class ProjectCard extends Component {
-  render() {
-    
-    const { title, description, id, issue } = this.props;
-
-    return (
-        <Project className="ProjectCard">
-          <div className="ProjectCardDetail">
-            <span className="ProjectTitle">{ title }</span>
-            <p className="ProjectDescription">{ description }</p>
-          </div>
-          <div className="ProjectCardFooter">
-          <Link 
-            className="ProjectViewButton"
-            to={`project/${id}`} >
-            View Project
-          </Link>
-          <a className="ProjectCardButton" href={ issue } target="_new">View Ticket</a>
-          </div>
-        </Project>
+const ProjectCard = ({ title, description, id, issue }) =>(
+  <Project className="ProjectCard">
+    <div className="ProjectCardDetail">
+      <span className="ProjectTitle">{ title }</span>
+      <p className="ProjectDescription">{ description }</p>
+    </div>
+    <div className="ProjectCardFooter">
+    <Link 
+      className="ProjectViewButton"
+      to={`project/${id}`} >
+      View Project
+    </Link>
+    <a className="ProjectCardButton" href={ issue } target="_new">View Ticket</a>
+    </div>
+  </Project>
     )
-  }
+
+ProjectCard.propTypes = {
+  title: string,
+  description: string,
+  id: number,
+  issue: string
 }
+
+export default ProjectCard;
 
 const Project = Styled.div`
 margin: ${spacing.small[2]};
