@@ -1,9 +1,8 @@
 import React from 'react';
 import { string } from 'prop-types';
 import Styled from 'styled-components';
-import colours from '../styles/colours.js';
-import { spacing } from '../styles/variables.js';
-import type from '../styles/mixins/type.js';
+import { spacing, colours } from '../styles/variables.js';
+import { type } from '../styles/mixins/index.js';
 
 
 const PageHeader = ({title, subtitle}) => (
@@ -27,7 +26,7 @@ const Header = Styled.div`
   flex-direction: column;
 
   .HeaderText {
-    ${type('heading3')}
+    ${type('heading2')}
     color: ${colours.textLight};
     border-bottom: 1px solid ${colours.tertiary};
     text-align: center;    

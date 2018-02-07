@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { bool, func } from 'prop-types';
 import Styled from 'styled-components';
-import colours from '../styles/colours.js';
-import { spacing } from '../styles/variables.js';
+import { spacing, colours } from '../styles/variables.js';
 import AppLinks from './AppLinks.js'
-import type from '../styles/mixins/type.js';
-import mediaQuery from '../styles/mixins/MediaQueryGenerator.js';
+import { type, mediaQuery } from '../styles/mixins/index.js';
 
 const MobileOffCanvas = ({ visible }) => (
       <MobileMenu visible={visible}>

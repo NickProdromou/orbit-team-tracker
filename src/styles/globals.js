@@ -1,4 +1,4 @@
-import colours from './colours.js'
+import { colours } from './variables.js'
 import normalize from './vendor/normalize';
 
 export default `

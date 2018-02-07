@@ -5,9 +5,8 @@ import ExpandableCard from '../components/ExpandableCard';
 import MinimalTeamMember from '../components/MinimalTeamMember';
 import Styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import colours from '../styles/colours.js';
-import { spacing } from '../styles/variables.js';
-import type from '../styles/mixins/type.js';
+import { spacing, colours } from '../styles/variables.js';
+import { type } from '../styles/mixins/index.js';
 
 class ProjectCard extends Component {
 

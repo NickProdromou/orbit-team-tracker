@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { func, array, string, object } from 'prop-types';
 import Styled from 'styled-components';
-import colours from '../styles/colours.js';
-import { spacing } from '../styles/variables.js';
-import type from '../styles/mixins/type.js';
+import { spacing, colours } from '../styles/variables.js';
+import { type } from '../styles/mixins/index.js';
 
 export default class ExpandableCard extends Component {
   

@@ -5,7 +5,7 @@ import { toggleMenu } from '../actions/uiActions.js'
 import AppHeader from '../components/AppHeader.js'
 import MobileOffCanvas from '../components/MobileOffCanvas.js'
 import Styled from 'styled-components';
-import colours from '../styles/colours.js';
+import { colours } from '../styles/variables.js';
 
 class PageContainer extends Component {    
 

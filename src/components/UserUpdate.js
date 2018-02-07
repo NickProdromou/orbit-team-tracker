@@ -1,9 +1,8 @@
 import React from 'react';
 import { string, arrayOf } from 'prop-types';
 import Styled from 'styled-components';
-import colours from '../styles/colours.js';
-import { spacing } from '../styles/variables.js';
-import type from '../styles/mixins/type.js';
+import { colours, spacing } from '../styles/variables.js';
+import { type } from '../styles/mixins/index.js';
 
 
 const UserUpdate = ({ update, blockers }) => (
