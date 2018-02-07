@@ -1,4 +1,5 @@
 import React from 'react';
+import { number, string } from 'prop-types';
 import Styled from 'styled-components';
 import type from '../styles/mixins/type.js';
 import mediaQuery from '../styles/mixins/MediaQueryGenerator.js';
@@ -24,6 +25,14 @@ const MinimalTeamMember = ({id, imageUrl, name, role, status}) => (
     </div>
   </User>
 )
+
+MinimalTeamMember.propTypes = {
+  id: number,
+  imageUrl: string,
+  name: string,
+  role: string,
+  status: string,
+}
 
 const User = Styled.div`
 background: ${colours.textLight};
@@ -85,8 +94,6 @@ border: 1px solid ${colours.highlight};
     cursor: pointer;
   }  
 }
-
-
 `
 
 export default MinimalTeamMember;

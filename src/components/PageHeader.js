@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string } from 'prop-types';
 import Styled from 'styled-components';
 import colours from '../styles/colours.js';
 import { spacing } from '../styles/variables.js';
@@ -14,8 +14,8 @@ const PageHeader = ({title, subtitle}) => (
 )
 
 PageHeader.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string,
+  title: string.isRequired,
+  subtitle: string,
 }
 
 const Header = Styled.div`  

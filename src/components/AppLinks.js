@@ -1,3 +1,4 @@
+import { func } from 'prop-types';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -16,6 +17,10 @@ const linkComponents = links.map((l, i) => (
       { l.title }    
     </NavLink>
 ));
+
+linkComponents.propTypes = {
+  callback: func
+}
 
 const AppLinks = () => linkComponents
 

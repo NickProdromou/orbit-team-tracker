@@ -1,4 +1,5 @@
 import React from 'react';
+import { string } from 'prop-types';
 import Styled, { css } from 'styled-components';
 import colours from '../styles/colours.js';
 import type from '../styles/mixins/type.js';
@@ -19,5 +20,9 @@ const Status = Styled.span`
     color: ${colours.highlight};
   `}
 `
+
+UserStatus.propTypes = {
+  status: string,
+};
 
 export default UserStatus;

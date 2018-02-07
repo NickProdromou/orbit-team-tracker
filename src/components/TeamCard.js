@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { string, number, arrayOf } from 'prop-types';
+import Employee from '../types/Employee.js';
+import Team from '../types/Team.js';
 import Styled from 'styled-components';
 import PropTypes from 'prop-types';
 import MinimalTeamMember from './MinimalTeamMember.js'
@@ -15,13 +18,13 @@ export default class TeamCard extends Component {
       expanded: false
     }
   }
-  
+
   static propTypes = {
     title: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     description: PropTypes.string,
     members: PropTypes.arrayOf(PropTypes.number),
-    employees: PropTypes.array,
+    employees: PropTypes.arrayOf(Employee)
   }
 
   toggleExpanded = () => {
@@ -30,9 +33,9 @@ export default class TeamCard extends Component {
     })
   }
 
-  showTeamMembers = () => {
-    return this.props.employees
-    .filter( e => e.team === this.props.id )
+  showTeamMembers = (employees, id) => {
+    return employees
+    .filter( e => e.team === id )
     .map(e => (
       <MinimalTeamMember
         id={ e.id }
@@ -46,9 +49,9 @@ export default class TeamCard extends Component {
   }
 
   render() {
-    const { title, description, members, id } = this.props;
+    const { title, description, members, id, employees } = this.props;
     return (
-      <Team className="TeamCard">
+      <TeamCardComponent className="TeamCard">
         <div className="TeamCardDetail">
           <Link to={`team/${id}`} className="TeamCardTitle">{ title }</Link>
           <p className="TeamCardDescription">{ description }</p>
@@ -61,15 +64,15 @@ export default class TeamCard extends Component {
         </div>
         { this.state.expanded && 
           (<div className="TeamCardMemberList">
-            { this.showTeamMembers() } 
+            { this.showTeamMembers(employees, id) } 
           </div>)
         }
-      </Team>
+      </TeamCardComponent>
     )
   }
 }
 
-const Team = Styled.div`
+const TeamCardComponent = Styled.div`
 margin: ${spacing.small[2]};
 background: ${colours.primary};
 border-radius: 4px;
