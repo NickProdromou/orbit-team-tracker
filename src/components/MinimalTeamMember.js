@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 const MinimalTeamMember = ({className, id, imageUrl, name, role, status}) => (
   <User>
-    <div className={`UserInner`}>
+    <div className="UserInner">
       <img className="UserAvatar" src={ imageUrl } alt="User profile"></img>
       <div className="UserDetail">
         <span className="UserName">{ name }</span>
