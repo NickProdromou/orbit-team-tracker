@@ -19,12 +19,12 @@ class Projects extends Component {
 
   render() {
 
-    const { projects } = this.props;
+    const { projects, employees } = this.props;
 
     return (
       <PageContainer>        
           <Page fluid>
-            <Row fluid>
+            <Row>
               <Column fluid>
                 <PageHeader title={ 'Projects' }subtitle={ 
                   `Select the a project from the list below, to find out more information.
@@ -35,13 +35,16 @@ class Projects extends Component {
           </Page>
           <Page>
             <Row>
-          { projects.map( project => (
-            <Column lg={6}>
+          { projects.map( (project, i) => (
+            <Column lg={6} key={i}>
               <ProjectCard
                 title={ project.title }
                 description={ project.description }                      
                 id={ project.id }
-                issue={ project.linkToIssue }               
+                issue={ project.linkToIssue }         
+                storyPoints={ project.storyPoints }      
+                employees={employees}
+                assignedMembers={ project.assignedMembers }
               />
             </Column>
           )) }
