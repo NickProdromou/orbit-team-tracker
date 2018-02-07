@@ -1,6 +1,6 @@
 # Orbit - Team Tracker
 
-Orbit is a team tracker for small teams, It shows whos' working on what, where they're working from, how many story points a project has, who is a member of what team and more.
+Orbit is a team tracker for small teams, It shows who in your team is working on what, where they're working from, how many story points a project has, who is a member of what team and more.
 
 I built this in around 30 hours over the span of 5 days.
 
@@ -17,8 +17,6 @@ There's a number of things I still want to implement but didn't want to drag it 
 
 
 ## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
