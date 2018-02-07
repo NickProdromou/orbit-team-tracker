@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { number, string, arrayOf, func, array } from 'prop-types';
+import { number, string, arrayOf, array } from 'prop-types';
 import Team from '../types/Team.js';
 import Styled from 'styled-components';
 import { spacing, colours } from '../styles/variables.js';
