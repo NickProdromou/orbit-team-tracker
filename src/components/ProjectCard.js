@@ -1,45 +1,66 @@
 import React, { Component } from 'react';
-import { number, string } from 'prop-types'
+import { number, string, arrayOf } from 'prop-types'
+import Employee from '../types/Employee.js'
+import ExpandableCard from '../components/ExpandableCard';
+import MinimalTeamMember from '../components/MinimalTeamMember';
 import Styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import colours from '../styles/colours.js';
 import { spacing } from '../styles/variables.js';
 import type from '../styles/mixins/type.js';
 
-const ProjectCard = ({ title, description, id, issue }) =>(
-  <Project className="ProjectCard">
-    <div className="ProjectCardDetail">
-      <span className="ProjectTitle">{ title }</span>
-      <p className="ProjectDescription">{ description }</p>
-    </div>
-    <div className="ProjectCardFooter">
-    <Link 
-      className="ProjectViewButton"
-      to={`project/${id}`} >
-      View Project
-    </Link>
-    <a className="ProjectCardButton" href={ issue } target="_new">View Ticket</a>
-    </div>
-  </Project>
-    )
+class ProjectCard extends Component {
 
-ProjectCard.propTypes = {
-  title: string,
-  description: string,
-  id: number,
-  issue: string
+  static propTypes = {
+    title: string,
+    description: string,
+    storyPoints: number,
+    id: number,
+    issue: string,
+    employees: arrayOf(Employee)
+  }
+
+  showTeamMembers = () => {
+    return this.props.employees.reduce((assigned,val) => {        
+      if (this.props.assignedMembers.includes(val.id)) {        
+        assigned.push(val);        
+      }
+      return assigned;
+    },[]).map(m => {
+      return (
+      <MinimalTeamMember        
+        id={ m.id }
+        imageUrl={ m.profileUrl }
+        name={ m.name }
+        role={ m.role }        
+        status={ m.status }
+        key={ m.id }
+      />)
+    })
 }
 
-export default ProjectCard;
-
+  render() {
+    const { title, description, id, issue, storyPoints, assignedMembers } = this.props;
+    return (
+      <ExpandableCard
+        renderFunc={this.showTeamMembers}
+        buttonTextExpanded={'hide employees working on task'}
+        buttonTextContracted={'show employees working on task'}        
+      >
+          <Project className="ProjectCard">
+            <div className="ProjectCardDetail">
+              <span className="ProjectTitle">{ title }</span>
+              <div className="ProjectStoryPoints">
+                <span><strong>{ storyPoints }</strong> story points</span>
+              </div>
+            <p className="ProjectDescription">{ description }</p>
+            </div>
+        </Project>
+      </ExpandableCard>
+    )
+  }
+}
 const Project = Styled.div`
-margin: ${spacing.small[2]};
-background: ${colours.primary};
-border-radius: 4px;
-padding: ${spacing.small[2]} ${spacing.small[4]};
-display: flex;
-flex-direction: column;
-border: 2px solid ${colours.highlight};
 
 .ProjectCardDetail {
   width: 100%;
@@ -57,32 +78,11 @@ border: 2px solid ${colours.highlight};
   color: ${colours.textLight};
 }
 
-.ProjectCardButton {
-  ${type('ui')}
+.ProjectStoryPoints {
+  ${type('detail')}
   color: ${colours.textLight};
-  text-decoration: underline;
-  padding: ${spacing.small[1]} ${spacing.small[3]};  
-  background: none;
-  border: 0;
-
-  &:hover {
-    cursor: pointer;
-  }  
-}
-
-.ProjectViewButton {
-    border: 1px solid #eee;
-    border-radius: 4px;    
-    color: ${colours.textLight};
-    text-decoration: none;
-    padding: ${spacing.small[1]} ${spacing.small[2]};
-}
-
-.ProjectCardFooter {
-  border-top: 1px solid ${colours.borderColour};
-  display: flex;
-  justify-content: flex-start;
-  padding: ${spacing.small[4]} 0;
+  margin-top: ${spacing.small[3]};
 }
 
 `
+export default ProjectCard;

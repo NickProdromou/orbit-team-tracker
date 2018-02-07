@@ -10,8 +10,7 @@ export default class HamburgerTrigger extends Component {
       open: PropTypes.bool.isRequired,
     };
 
-    render() {
-
+    render() {        
         const { open, toggle, className } = this.props;
 
         return (            

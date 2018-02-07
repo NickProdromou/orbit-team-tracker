@@ -8,9 +8,9 @@ import { spacing } from '../styles/variables.js';
 import UserStatus from './UserStatus'; 
 import { Link } from 'react-router-dom';
 
-const MinimalTeamMember = ({id, imageUrl, name, role, status}) => (
+const MinimalTeamMember = ({className, id, imageUrl, name, role, status}) => (
   <User>
-    <div className="UserInner">
+    <div className={`UserInner`}>
       <img className="UserAvatar" src={ imageUrl } alt="User profile"></img>
       <div className="UserDetail">
         <span className="UserName">{ name }</span>
@@ -38,7 +38,7 @@ const User = Styled.div`
 background: ${colours.textLight};
 border: 1px solid ${colours.highlight};
 :not(:last-child) {
-  margin-bottom: ${spacing.small[3]}
+  margin-bottom: ${spacing.small[5]}
 }
 
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { array, bool, func } from 'prop-types';
 import { connect } from 'react-redux';
 import { toggleMenu } from '../actions/uiActions.js'
-import PropTypes from 'prop-types';
 import AppHeader from '../components/AppHeader.js'
 import MobileOffCanvas from '../components/MobileOffCanvas.js'
 import Styled from 'styled-components';
@@ -10,17 +10,20 @@ import colours from '../styles/colours.js';
 class PageContainer extends Component {    
 
     static propTypes = {
-        children: PropTypes.array,
-        menuOpen: PropTypes.bool,
-        toggleMenu: PropTypes.func.isRequired,
+        children: array,
+        menuOpen: bool,
+        toggleMenu: func.isRequired,
+        children: array,
     };    
 
     render() {
         const { children, routerProps, menuOpen, toggleMenu } =  this.props;
-
         return (
             <Page>
-                <MobileOffCanvas toggle={ toggleMenu } visible={ menuOpen }></MobileOffCanvas>
+                <MobileOffCanvas 
+                    toggle={ toggleMenu } 
+                    visible={ menuOpen }
+                />
                 <AppHeader 
                     routerProps={ routerProps }
                     menuOpen={ menuOpen }
