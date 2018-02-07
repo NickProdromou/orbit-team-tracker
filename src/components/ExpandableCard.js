@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { func, array, string, object } from 'prop-types';
+import { func, string, object } from 'prop-types';
 import Styled from 'styled-components';
 import colours from '../styles/colours.js';
 import { spacing } from '../styles/variables.js';
@@ -14,17 +14,17 @@ export default class ExpandableCard extends Component {
     }
   }
 
-  toggleExpanded = (expanded) => {
-    this.setState({
-      expanded: !expanded
-    })
-  }
-
   static propTypes = {
     children: object,
     renderFunc: func,
     buttonTextExpanded: string,
     buttonTextContracted: string,
+  }
+
+  toggleExpanded = (expanded) => {
+    this.setState({
+      expanded: !expanded
+    })
   }
 
   render() {

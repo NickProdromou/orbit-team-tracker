@@ -10,7 +10,6 @@ import colours from '../styles/colours.js';
 class PageContainer extends Component {    
 
     static propTypes = {
-        children: array,
         menuOpen: bool,
         toggleMenu: func.isRequired,
         children: array,

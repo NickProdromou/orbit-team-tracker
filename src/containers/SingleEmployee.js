@@ -26,7 +26,7 @@ class SingleEmployee extends Component {
   render() {    
     const { employees, teams, match, projects } = this.props;
     console.log(employees)
-    const selectedEmployee = employees.find(e => e.id === parseInt(match.params.id) )
+    const selectedEmployee = employees.find(e => e.id === parseInt(match.params.id, 10) )
     console.log(match.params)
     console.log(selectedEmployee);
     return (

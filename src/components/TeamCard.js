@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { string, number, arrayOf } from 'prop-types';
 import Employee from '../types/Employee.js';
-import Team from '../types/Team.js';
 import Styled from 'styled-components';
-import PropTypes from 'prop-types';
 import ExpandableCard from '../components/ExpandableCard';
 import MinimalTeamMember from './MinimalTeamMember.js'
 import colours from '../styles/colours.js';
@@ -21,11 +19,11 @@ export default class TeamCard extends Component {
   }
 
   static propTypes = {
-    title: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-    description: PropTypes.string,
-    members: PropTypes.arrayOf(PropTypes.number),
-    employees: PropTypes.arrayOf(Employee)
+    title: string.isRequired,
+    id: number.isRequired,
+    description: string,
+    members: arrayOf(number),
+    employees: arrayOf(Employee)
   }
 
   showTeamMembers = () => {
@@ -44,7 +42,7 @@ export default class TeamCard extends Component {
   }
 
   render() {
-    const { title, description, members, id, employees } = this.props;
+    const { title, description, members, id } = this.props;
     return (
       <ExpandableCard
         renderFunc={ this.showTeamMembers }
