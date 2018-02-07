@@ -4,7 +4,6 @@ import Styled from 'styled-components';
 import { type, mediaQuery } from '../styles/mixins/index.js';
 import { spacing, colours } from '../styles/variables.js';
 import UserStatus from './UserStatus'; 
-import { Link } from 'react-router-dom';
 
 const MinimalTeamMember = ({className, id, imageUrl, name, role, status}) => (
   <User>
@@ -17,10 +16,7 @@ const MinimalTeamMember = ({className, id, imageUrl, name, role, status}) => (
           <UserStatus status={ status }/>
         </div>
       </div>
-    </div>    
-    <div className="UserFooter">
-      <Link className="UserProfileLink" to={`employee/${id}`}>View profile</Link>
-    </div>
+    </div>        
   </User>
 )
 
@@ -71,26 +67,6 @@ border: 1px solid ${colours.highlight};
 
 .UserRole {
   ${type('detail')}
-}
-
-.UserFooter {
-  display: flex;  
-  padding: ${spacing.small[3]} ${spacing.small[2]};
-}
-
-.UserProfileLink {
-  margin-left: auto;
-  padding: ${spacing.small[1]} ${spacing.small[3]};
-  ${type('ui')}
-  color: ${colours.textLight};
-  background: ${colours.secondary};
-  font-weight: lighter;
-  border-radius: 4px;
-  text-decoration: none;
-
-  &:hover {
-    cursor: pointer;
-  }  
 }
 `
 
