@@ -13,7 +13,7 @@ There's a number of things I still want to implement but didn't want to drag it 
 *	more reusable dumb components, there's more work I could do around this
 
 ## Known bugs
--mobile menu doesn't close when you select a link, I had trouble dispatching the action, because preventing default behaviout on react-router `<NavLink/>` component means that the browser reloads the page, instead of the expected SPA action.
+* mobile menu doesn't close when you select a link, I had trouble dispatching the action, because preventing default behaviout on react-router `<NavLink/>` component means that the browser reloads the page, instead of the expected SPA action.
 
 
 ## Getting Started
