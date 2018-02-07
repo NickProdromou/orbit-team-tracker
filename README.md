@@ -20,17 +20,14 @@ There's a number of things I still want to implement but didn't want to drag it 
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+You'll need installed:
 
 ```
 node
-yarn
-npm
+yarn/npm
 ```
 
 ### Installing
-
-A step by step series of examples that tell you have to get a development env running
 
 clone the repo
 
