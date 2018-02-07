@@ -14,7 +14,7 @@ export default class ErrorPage extends Component {
               <PageHeader
                 title={`OOPS`}
                 subtitle={`Something went wrong, we don't have a page here. 
-                press the back button from your browser, or select one of these pages to find your way
+                press the back button on your browser, or select one of the options from the menu.
                 `}
               />              
             </Column>

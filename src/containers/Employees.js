@@ -18,19 +18,24 @@ class Employees extends Component {
     projects: arrayOf(Project),
   }
 
-  renderProjects = ( assignedProjects, projects) => {
+  renderProjects = ( assignedProjects, projects, employeeId) => {
     const currentProjects = assignedProjects.map( project => {
       return projects.find( p => p.id === project) || [];
-    })  
+    })
+
+    const filteredEmployees = this.props.employees.filter(e => e.id !== employeeId)
 
     return currentProjects.length > 0 && currentProjects.map( cp => (
       <ProjectCard
         title={ cp.title }
+        storyPoints={ cp.storyPoints }
         description={ cp.description }
         id={ cp.id }
         issue={ cp.linkToTicket }
         key={`project-${cp.id}}`}
-      />      
+        employees={ filteredEmployees }
+        assignedMembers={ cp.assignedMembers }
+      />
     ));
   }
 
@@ -60,7 +65,7 @@ class Employees extends Component {
                 teams={ teams }
                 update={ employee.update }
                 blockers={ employee.blockers }>
-                  { this.renderProjects( employee.assignedProjects, projects) }
+                  { this.renderProjects( employee.assignedProjects, projects, employee.id) }
                 </EmployeeCard>
             </Column>
           )) }

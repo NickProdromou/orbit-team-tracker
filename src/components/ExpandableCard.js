@@ -52,7 +52,6 @@ export default class ExpandableCard extends Component {
 }
 
 const StyledExpandableCard = Styled.div`
-  margin: ${spacing.small[2]};
   background: ${colours.primary};
   border-radius: 4px;
   padding: ${spacing.small[3]};

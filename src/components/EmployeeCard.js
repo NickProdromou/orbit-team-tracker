@@ -36,11 +36,11 @@ export default class EmployeeCard extends Component {
   }
 
   renderUpdate = (u,b) => (b.length > 0  || u !== '') ? 
-    (<div className="UserCardUpdate">
+    (<div className="EmployeeCardUpdate">
       <UserUpdate update={ u } blockers={ [...b] }/>
      </div>) : 
-    (<div className="UserCardUpdate">
-      <span className="UserUpdateAbsent">user has not provided an update</span>
+    (<div className="EmployeeCardUpdate">
+      <span className="EmployeeUpdateAbsent">user has not provided an update</span>
       </div>);
 
 
@@ -63,24 +63,24 @@ export default class EmployeeCard extends Component {
     const { showChildren } = this.state;
 
     return (
-      <Employee className="UserCard">
-      <div className="UserCardInner">
-        <figure className="UserAvatar">
-          <img src={ image } alt="user profile" className="UserImage"/>
-          <UserStatus status={ status }/>
+      <Employee className="EmployeeCard">
+      <div className="EmployeeCardInner">
+        <figure className="EmployeeAvatar">
+          <img src={ image } alt="user profile" className="EmployeeImage"/>
+          <UserStatus className="EmployeeStatus" status={ status }/>
         </figure>
-        <div className="UserDetail">
-          <h2 className="UserName">{ name }</h2>
-          <h3 className="UserTitle">{ role }</h3>
-          <h4 className="UserTeam">{ this.getTeam(teams, team) }</h4>
-          <button className="UserButton" onClick={ ()=>this.toggleExpanded(showChildren) }>
+        <div className="EmployeeDetail">
+          <h2 className="EmployeeName">{ name }</h2>
+          <h3 className="EmployeeTitle">{ role }</h3>
+          <h4 className="EmployeeTeam">{ this.getTeam(teams, team) }</h4>
+          <button className="EmployeeButton" onClick={ ()=>this.toggleExpanded(showChildren) }>
           { showChildren ? 'hide' : 'show' } update
           </button>
         </div>
       </div>
-      <div className="UserProjects">
+      <div className="EmployeeProjects">        
+        { showChildren && children }        
         { showChildren && this.renderUpdate(update, blockers) }
-        { showChildren && children }
       </div>        
       </Employee>
     )
@@ -94,17 +94,17 @@ border-radius: 4px;
 justify-content: flex-start;
 padding: ${spacing.small[5]};
 
-.UserCardInner {
+.EmployeeCardInner {
   display: flex;  
 }
 
-.UserAvatar {
+.EmployeeAvatar {
   margin: 0;
   display: flex;
   flex-direction: column;
 }
 
-.UserDetail {
+.EmployeeDetail {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -112,39 +112,39 @@ padding: ${spacing.small[5]};
   text-align: right;
 }
 
-.UserName {
+.EmployeeName {
   ${type('heading3')}
   margin: 0;
 }
-.UserTitle {
+.EmployeeTitle {
   ${type('ui')}
   font-weight: bold;
   margin: 0;
 }
 
-.UserTeam {
+.EmployeeTeam {
   ${type('detail')}
   margin-top: ${spacing.small[5]};    
 }
 
-.UserStatus {
+.EmployeeStatus {
   background: ${colours.primary};
   padding: ${spacing.small[3]} ${spacing.small[2]};
 }
 
-.UserUpdate {
+.EmployeeCardUpdate {
   margin-top: ${spacing.small[5]};
 }
 
-.UserUpdateAbsent {
+.EmployeeUpdateAbsent {
   ${type('detail')}
 }
 
-.ProjectCard {
- margin: ${spacing.small[2]} 0;
+.ExpandableCard {
+  margin: ${spacing.small[2]} 0;
 }
 
-.UserButton {
+.EmployeeButton {
   ${type('ui')}
   margin-left: auto;
   margin-left: auto;
